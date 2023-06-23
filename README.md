@@ -9,6 +9,8 @@ the content(platform) jar is located in: custommodel-platform/target/custommodel
 refer to this tutorial to setup custom models:
 https://docs.alfresco.com/content-services/7.3/tutorial/platform/content-model/#adding-an-association
 
+another good resource is this:  https://ecmarchitect.com/alfresco-developer-series-tutorials/content/tutorial/tutorial.html#associations
+
 
 The solution creates a custom model for whitepapers and a related type for associations.  
 

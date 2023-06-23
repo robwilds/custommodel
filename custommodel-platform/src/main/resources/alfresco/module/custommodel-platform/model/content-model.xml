@@ -16,7 +16,7 @@
 
     <!-- Introduction of new namespaces defined by this model -->
     <namespaces>
-        <namespace uri="http://www.local.com/model/content/1.0" prefix="dojm" />
+        <namespace uri="http://www.local.com/model/content/1.0" prefix="dojmodel" />
     </namespaces>
     <!--constraints>
         <constraint name="sc:campaignList" type="LIST">

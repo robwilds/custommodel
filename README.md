@@ -1,6 +1,10 @@
 # Alfresco AIO Project - SDK 4.5
 
-After cloning this repo, perform a mvn package to create JARS using the as-built configuration
+After cloning this repo, perform a mvn package to create JARS using the as-built configuration.
+
+the share jar is located in: custommodel-share/target/custommodel-share-1.0-SNAPSHOT.jar
+
+the content(platform) jar is located in: custommodel-platform/target/custommodel-platform-1.0-SNAPSHOT.jar
 
 refer to this tutorial to setup custom models:
 https://docs.alfresco.com/content-services/7.3/tutorial/platform/content-model/#adding-an-association

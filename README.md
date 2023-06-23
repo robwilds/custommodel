@@ -1,8 +1,26 @@
 # Alfresco AIO Project - SDK 4.5
 
+After cloning this repo, perform a mvn package to create JARS using the as-built configuration
+
 refer to this tutorial to setup custom models:
 https://docs.alfresco.com/content-services/7.3/tutorial/platform/content-model/#adding-an-association
 
+
+The solution creates a custom model for whitepapers and a related type for associations.  
+
+After importing the jar files, upload a document in to alfresco and change the type to white paper.
+
+The association is made via rest api call.  here's a CURL to illustrate how the REST api call is made:
+
+
+curl -X POST "http://3.90.226.222/alfresco/api/-default-/public/alfresco/versions/1/nodes/06783619-6ba7-41e3-a01b-3763eebf0bde/targets" -H "accept: application/json" -H "authorization: Basic ZGVtbzpkZW1v" -H "Content-Type: application/json" -d "{ \"targetId\": \"e2202396-2665-40cc-878d-a63941a54ef6\", \"assocType\": \"my:relatedDocuments\"}"
+
+
+However you can manually select the associated document in the "edit properties" screen.
+
+Once the associated doc is applied, you can click on the doc in the edit properties window to view it.
+
+# DEFAULT INFO BELOW
 
 This is an All-In-One (AIO) project for Alfresco SDK 4.5.
 

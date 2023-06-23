@@ -34,6 +34,16 @@
                     <show id="cm:description" force="true" />
                     <show id="my:relatedDocuments" />
                 </field-visibility>
+                <appearance>
+
+            <field id="my:relatedDocuments">
+                  <control template="/org/alfresco/components/form/controls/association.ftl">
+                     <control-param name="showTargetLink">true</control-param>
+                     <control-param name="allowNavigationToContentChildren">true</control-param>
+                  </control>
+            </field>
+
+         </appearance>
             </form>
         </forms>
     </config>

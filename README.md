@@ -1,5 +1,9 @@
 # Alfresco AIO Project - SDK 4.5
 
+refer to this tutorial to setup custom models:
+https://docs.alfresco.com/content-services/7.3/tutorial/platform/content-model/#adding-an-association
+
+
 This is an All-In-One (AIO) project for Alfresco SDK 4.5.
 
 Run with `./run.sh build_start` or `./run.bat build_start` and verify that it

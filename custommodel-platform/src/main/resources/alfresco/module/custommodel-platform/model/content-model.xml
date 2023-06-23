@@ -1,49 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!-- Definition of new Model -->
-<model name="dojmodel:dojthemodel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+<!-- The important part here is the name - Note: the use of the my: namespace
+	which is defined further on in the document -->
+<model name="my:contentModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
     <!-- Optional meta-data about the model -->
-    <description>DOJ Model</description>
-    <author>Rob Wilds</author>
+    <description>Example Custom Model</description>
+    <author>Alfresco Documentation Team</author>
     <version>1.0</version>
 
     <!-- Imports are required to allow references to definitions in other models -->
     <imports>
         <!-- Import Alfresco Dictionary Definitions -->
-        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d" />
+        <import uri="http://www.alfresco.org/model/dictionary/1.0"
+                prefix="d" />
         <!-- Import Alfresco Content Domain Model Definitions -->
         <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm" />
     </imports>
 
     <!-- Introduction of new namespaces defined by this model -->
+    <!-- NOTE: The following namespace my.new.model should be changed to reflect
+        your own namespace -->
     <namespaces>
-        <namespace uri="http://www.local.com/model/content/1.0" prefix="dojmodel" />
+        <namespace uri="http://www.mycompany.com/model/content/1.0"
+                   prefix="my" />
     </namespaces>
-    <!--constraints>
-        <constraint name="sc:campaignList" type="LIST">
+
+    <constraints>
+        <constraint name="my:productListConstraint" type="LIST">
             <parameter name="allowedValues">
                 <list>
-                    <value>Application Syndication</value>
-                    <value>Private Event Retailing</value>
-                    <value>Social Shopping</value>
+                    <value>Foobar Widget</value>
+                    <value>Flux Capacitor</value>
+                    <value>Big Bold App</value>
                 </list>
             </parameter>
         </constraint>
-    </constraints-->
+    </constraints>
 
     <types>
         <!-- Enterprise-wide generic document type -->
-        <type name="dojthemodel:doc">
-            <title>doj Document</title>
+        <type name="my:doc">
+            <title>MyCompany Generic Document</title>
             <parent>cm:content</parent>
             <associations>
-                <association name="doj:name">
+                <association name="my:relatedDocuments">
                     <title>Related Documents</title>
                     <source>
                         <mandatory>false</mandatory>
                         <many>true</many>
                     </source>
                     <target>
-                        <class>dojthemodel:doc"</class>
+                        <class>my:doc</class>
                         <mandatory>false</mandatory>
                         <many>true</many>
                     </target>
@@ -51,42 +61,22 @@
             </associations>
         </type>
 
-        <type name="dojthemodel:name">
-            <title>Name</title>
-            <parent>dojthemodel:doc</parent>
+        <type name="my:marketingDoc">
+            <title>MyCompany Marketing Document</title>
+            <parent>my:doc</parent>
+            <properties>
+                <property name="my:product">
+                    <type>d:text</type>
+                    <multiple>true</multiple>
+                    <constraints>
+                        <constraint ref="my:productListConstraint" />
+                    </constraints>
+                </property>
+            </properties>
         </type>
-
-
+        <type name="my:whitepaper">
+            <title>MyCompany Whitepaper</title>
+            <parent>my:marketingDoc</parent>
+        </type>
     </types>
-
-    <!--aspects>
-        <aspect name="sc:webable">
-            <title>Someco Webable</title>
-            <properties>
-                <property name="sc:published">
-                    <type>d:date</type>
-                </property>
-                <property name="sc:isActive">
-                    <type>d:boolean</type>
-                    <default>false</default>
-                </property>
-            </properties>
-        </aspect>
-
-        <aspect name="sc:productRelated">
-            <title>Someco Product Metadata</title>
-            <properties>
-                <property name="sc:product">
-                    <type>d:text</type>
-                    <mandatory>true</mandatory>
-                    <multiple>true</multiple>
-                </property>
-                <property name="sc:version">
-                    <type>d:text</type>
-                    <mandatory>true</mandatory>
-                    <multiple>true</multiple>
-                </property>
-            </properties>
-        </aspect>
-    </aspects-->
 </model>

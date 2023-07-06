@@ -48,6 +48,45 @@
         </forms>
     </config>
     <!-- End of Form customization for whitepaper -->
+
+    <!-- Form customization for cases -->
+    <config evaluator="model-type" condition="my:cases">
+        <forms>
+            <form>
+                <field-visibility>
+                    <show id="my:caseID" />
+                    <show id="my:plaintiff" />
+                    <show id="my:defendant" />
+                    <show id="cm:description" />
+                </field-visibility>
+            </form>
+        </forms>
+    </config>
+
+    <config evaluator="node-type" condition="my:cases">
+        <forms>
+            <form>
+                <field-visibility>
+                    <show id="my:caseID" />
+                    <show id="my:plaintiff" />
+                    <show id="my:defendant" />
+                    <show id="cm:description" />
+                    <show id="my:relatedCaseInfo" />
+                </field-visibility>
+                <appearance>
+
+            <field id="my:relatedCaseInfo">
+                  <control template="/org/alfresco/components/form/controls/association.ftl">
+                     <control-param name="showTargetLink">true</control-param>
+                     <control-param name="allowNavigationToContentChildren">true</control-param>
+                  </control>
+            </field>
+
+         </appearance>
+            </form>
+        </forms>
+    </config>
+    <!-- End of Form customization for cases -->
     <config evaluator="string-compare" condition="DocumentLibrary">
         <!--
         Used by "Manage Rules" -> "Specialise type" action.

@@ -32,9 +32,9 @@
         <constraint name="my:productListConstraint" type="LIST">
             <parameter name="allowedValues">
                 <list>
-                    <value>Foobar Widget</value>
-                    <value>Flux Capacitor</value>
-                    <value>Big Bold App</value>
+                    <value>case type 1</value>
+                    <value>case type 2</value>
+                    <value>case type 3</value>
                 </list>
             </parameter>
         </constraint>
@@ -77,6 +77,38 @@
         <type name="my:whitepaper">
             <title>MyCompany Whitepaper</title>
             <parent>my:marketingDoc</parent>
+        </type>
+        <type name="my:cases">
+            <title>Cases</title>
+            <parent>cm:content</parent>
+            <properties>
+                <property name="my:caseID">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                </property>
+                <property name="my:plaintiff">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                </property>
+                <property name="my:defendant">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                </property>
+            </properties>
+            <associations>
+                <child-association name="my:relatedCaseInfo">
+                    <title>Related Case Info </title>
+                    <source>
+                        <mandatory>false</mandatory>
+                        <many>true</many>
+                    </source>
+                    <target>
+                        <class>my:cases</class>
+                        <mandatory>false</mandatory>
+                        <many>true</many>
+                    </target>
+                </child-association>
+            </associations>
         </type>
     </types>
 </model>

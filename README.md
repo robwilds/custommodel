@@ -12,7 +12,9 @@ https://docs.alfresco.com/content-services/7.3/tutorial/platform/content-model/#
 another good resource is this:  https://ecmarchitect.com/alfresco-developer-series-tutorials/content/tutorial/tutorial.html#associations
 
 
-The solution creates a custom model for whitepapers and a related type for associations.  
+The solution creates a custom model for whitepapers and a related type for peer associations.  
+
+there's another type called cases that has a child-association configured for my:relatedCaseDocs
 
 After importing the jar files, upload a document in to alfresco and change the type to white paper.
 

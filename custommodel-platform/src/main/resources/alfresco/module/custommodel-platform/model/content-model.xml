@@ -85,14 +85,26 @@
                 <property name="my:caseID">
                     <type>d:text</type>
                     <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
                 </property>
                 <property name="my:plaintiff">
                     <type>d:text</type>
                     <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
                 </property>
                 <property name="my:defendant">
                     <type>d:text</type>
                     <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
                 </property>
             </properties>
             <associations>

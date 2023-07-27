@@ -26,6 +26,8 @@
     <namespaces>
         <namespace uri="http://www.mycompany.com/model/content/1.0"
                    prefix="my" />
+        <namespace uri="http://www.mycompany.com/model/relatedcontent/1.0"
+                   prefix="rel" />
     </namespaces>
 
     <constraints>
@@ -82,6 +84,86 @@
             <title>Cases</title>
             <parent>cm:content</parent>
             <properties>
+            <property name="my:DocID">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
+            <property name="my:DocFileName">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
+            <property name="my:DocType">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
+            <property name="my:DocFormat">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
+            <property name="my:DocTitle">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
+            <property name="my:Author">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
+            <property name="my:Recipient">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
+            <property name="my:RecipientTitle">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
+                <property name="my:RecipientAgency">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
+                <property name="my:FOIANotes">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
                 <property name="my:caseID">
                     <type>d:text</type>
                     <multiple>false</multiple>
@@ -115,12 +197,56 @@
                         <many>true</many>
                     </source>
                     <target>
-                        <class>my:cases</class>
+                        <class>rel:relatedCases</class>
                         <mandatory>false</mandatory>
                         <many>true</many>
                     </target>
                 </child-association>
             </associations>
+        </type>
+        <type name="rel:relatedCases">
+            <title>Cases</title>
+            <parent>cm:content</parent>
+            <properties>
+                <property name="rel:relcaseID">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
+                <property name="rel:relplaintiff">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
+                <property name="rel:reldefendant">
+                    <type>d:text</type>
+                    <multiple>false</multiple>
+                    <index enabled="true">
+                        <tokenised>BOTH</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
+            </properties>
+            <!--associations>
+                <child-association name="my:relatedCaseInfo">
+                    <title>Related Case Info </title>
+                    <source>
+                        <mandatory>false</mandatory>
+                        <many>true</many>
+                    </source>
+                    <target>
+                        <class>my:relatedCases</class>
+                        <mandatory>false</mandatory>
+                        <many>true</many>
+                    </target>
+                </child-association>
+            </associations-->
         </type>
     </types>
 </model>

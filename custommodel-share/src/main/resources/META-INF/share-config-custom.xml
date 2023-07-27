@@ -54,6 +54,16 @@
         <forms>
             <form>
                 <field-visibility>
+                <show id="my:DocID" />
+                <show id="my:DocFileName" />
+                <show id="my:DocType" />
+                <show id="my:DocFormat" />
+                <show id="my:DocTitle" />
+                <show id="my:Author" />
+                <show id="my:Recipient" />
+                <show id="my:RecipientTitle" />
+                <show id="my:RecipientAgency" />
+                <show id="my:FOIANotes" />
                     <show id="my:caseID" />
                     <show id="my:plaintiff" />
                     <show id="my:defendant" />
@@ -67,6 +77,16 @@
         <forms>
             <form>
                 <field-visibility>
+                <show id="my:DocID" />
+                <show id="my:DocFileName" />
+                <show id="my:DocType" />
+                <show id="my:DocFormat" />
+                <show id="my:DocTitle" />
+                <show id="my:Author" />
+                <show id="my:Recipient" />
+                <show id="my:RecipientTitle" />
+                <show id="my:RecipientAgency" />
+                <show id="my:FOIANotes" />
                     <show id="my:caseID" />
                     <show id="my:plaintiff" />
                     <show id="my:defendant" />
@@ -82,6 +102,43 @@
                   </control>
             </field>
 
+         </appearance>
+            </form>
+        </forms>
+    </config>
+    <!-- End of Form customization for cases -->
+
+    <!-- Form customization for relatedCases -->
+    <config evaluator="model-type" condition="rel:relatedCases">
+        <forms>
+            <form>
+                <field-visibility>
+                    <show id="rel:relcaseID" />
+                    <show id="rel:relplaintiff" />
+                    <show id="rel:reldefendant" />
+                    <show id="cm:description" />
+                </field-visibility>
+            </form>
+        </forms>
+    </config>
+
+    <config evaluator="node-type" condition="rel:relatedCases">
+        <forms>
+            <form>
+                <field-visibility>
+                    <show id="rel:relcaseID" />
+                    <show id="rel:relplaintiff" />
+                    <show id="rel:reldefendant" />
+                    <show id="cm:description" />
+                    <!--show id="my:relatedCaseInfo" /-->
+                </field-visibility>
+                <appearance>
+            <!--field id="my:relatedCaseInfo">
+                  <control template="/org/alfresco/components/form/controls/association.ftl">
+                     <control-param name="showTargetLink">true</control-param>
+                     <control-param name="allowNavigationToContentChildren">true</control-param>
+                  </control>
+            </field-->
          </appearance>
             </form>
         </forms>
@@ -114,6 +171,8 @@
             <type name="cm:content">
                 <!-- Custom sub-type added for whitepapers -->
                 <subtype name="my:whitepaper" />
+                <subtype name="my:cases" />
+                <subtype name="rel:relatedCases" />
             </type>
 
             <type name="cm:folder">

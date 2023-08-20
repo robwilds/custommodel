@@ -116,6 +116,7 @@
                     <show id="rel:relcaseID" />
                     <show id="rel:relplaintiff" />
                     <show id="rel:reldefendant" />
+                    <show id="rel:parentCase" />
                     <show id="cm:description" />
                 </field-visibility>
             </form>
@@ -129,16 +130,16 @@
                     <show id="rel:relcaseID" />
                     <show id="rel:relplaintiff" />
                     <show id="rel:reldefendant" />
+                    <show id="rel:parentCase" />
                     <show id="cm:description" />
-                    <!--show id="my:relatedCaseInfo" /-->
                 </field-visibility>
                 <appearance>
-            <!--field id="my:relatedCaseInfo">
+            <field id="rel:parentCase">
                   <control template="/org/alfresco/components/form/controls/association.ftl">
                      <control-param name="showTargetLink">true</control-param>
                      <control-param name="allowNavigationToContentChildren">true</control-param>
                   </control>
-            </field-->
+            </field>
          </appearance>
             </form>
         </forms>
@@ -169,7 +170,7 @@
          -->
         <types>
             <type name="cm:content">
-                <!-- Custom sub-type added for whitepapers -->
+                <!-- Custom sub-type added for custom types -->
                 <subtype name="my:whitepaper" />
                 <subtype name="my:cases" />
                 <subtype name="rel:relatedCases" />

@@ -116,8 +116,8 @@
                     <show id="rel:relcaseID" />
                     <show id="rel:relplaintiff" />
                     <show id="rel:reldefendant" />
-                    <show id="rel:parentCase" />
                     <show id="cm:description" />
+                    <show id="rel:parentCase" />
                 </field-visibility>
             </form>
         </forms>
@@ -130,8 +130,8 @@
                     <show id="rel:relcaseID" />
                     <show id="rel:relplaintiff" />
                     <show id="rel:reldefendant" />
-                    <show id="rel:parentCase" />
                     <show id="cm:description" />
+                    <show id="rel:parentCase" />
                 </field-visibility>
                 <appearance>
             <field id="rel:parentCase">
